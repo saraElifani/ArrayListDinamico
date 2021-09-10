@@ -9,15 +9,15 @@ public class Main {
 
     public static void main(String[] args){
         do{
-            String[] fraseInIngresso = splitFraseInParole();
+            String input = JOptionPane.showInputDialog(null, "Inserisci la frase");
+            if(input == null) return;
+            String[] fraseInIngresso = splitFraseInParole(input);
             riempiLista(fraseInIngresso);
             programContinue= true;
         }while (programContinue);
-
     }
 
-    public static String[] splitFraseInParole() {
-        String input = JOptionPane.showInputDialog(null, "Inserisci la frase");
+    public static String[] splitFraseInParole(String input) {
         String[] arrayParole = input.split(" ");
         return arrayParole;
     }
@@ -32,6 +32,5 @@ public class Main {
             System.out.println(myItem);
         }
         System.out.println("------------");
-
     }
 }
